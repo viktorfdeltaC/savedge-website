@@ -1,4 +1,6 @@
+import { memo } from 'react'
 import { useScroll, useTransform, motion } from 'framer-motion'
+import CustomCursor from './components/CustomCursor'
 import Navbar from './components/Navbar'
 import PriceTicker from './components/PriceTicker'
 import Hero from './components/Hero'
@@ -10,9 +12,9 @@ import Footer from './components/Footer'
 
 const noiseBg = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='250' height='250'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='250' height='250' filter='url(%23n)'/%3E%3C/svg%3E"
 
-const Divider = () => (
+const Divider = memo(() => (
   <div className="h-px w-full bg-[#C9A84C]/30" />
-)
+))
 
 function ScrollProgressBar() {
   const { scrollYProgress } = useScroll()
@@ -28,6 +30,7 @@ function ScrollProgressBar() {
 export default function App() {
   return (
     <div className="bg-[#0A0A0A] text-gray-200">
+      <CustomCursor />
       <ScrollProgressBar />
       {/* Noise texture overlay */}
       <div

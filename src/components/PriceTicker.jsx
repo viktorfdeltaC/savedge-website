@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, memo } from 'react'
 
 function formatPrice(price) {
   return price.toLocaleString('de-DE', { minimumFractionDigits: 2, maximumFractionDigits: 2 })
@@ -44,7 +44,7 @@ export default function PriceTicker() {
   )
 }
 
-function PriceItem({ emoji, label, price }) {
+const PriceItem = memo(function PriceItem({ emoji, label, price }) {
   return (
     <span className="flex items-center gap-1.5">
       <span>{emoji}</span>
@@ -52,4 +52,4 @@ function PriceItem({ emoji, label, price }) {
       <span className="text-white font-medium">{formatPrice(price)} €/oz</span>
     </span>
   )
-}
+})

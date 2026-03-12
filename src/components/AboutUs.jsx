@@ -31,7 +31,7 @@ function useCountUp(target, duration = 1500) {
           requestAnimationFrame(tick)
         }
       },
-      { threshold: 0.3 }
+      { threshold: 0.1 }
     )
     observer.observe(el)
     return () => observer.disconnect()
@@ -80,6 +80,8 @@ export default function AboutUs() {
               src={aboutImg}
               alt="Edelmetall-Beratung"
               className="absolute inset-0 w-full h-full object-cover"
+              loading="lazy"
+              decoding="async"
             />
             {/* Subtle dark overlay */}
             <div className="absolute inset-0 bg-black/20 rounded-lg" />

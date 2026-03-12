@@ -27,6 +27,8 @@ export default function Hero() {
           backgroundPositionX: 'center',
           backgroundPositionY: bgY,
           backgroundRepeat: 'no-repeat',
+          willChange: 'background-position',
+          transform: 'translateZ(0)',
         }}
       />
       {/* Dark overlay */}

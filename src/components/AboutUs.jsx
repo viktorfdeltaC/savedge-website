@@ -1,8 +1,65 @@
+import { useEffect, useRef, useState } from 'react'
+import { motion } from 'framer-motion'
+
 const stats = [
-  { value: '15+', label: 'Jahre Erfahrung im Edelmetallmarkt' },
-  { value: '500+', label: 'Privatanleger erfolgreich beraten' },
-  { value: '100%', label: 'Unabhängig & herstellerneutral' },
+  { value: '15+', label: 'Jahre Erfahrung im Edelmetallmarkt', target: 15, suffix: '+' },
+  { value: '500+', label: 'Privatanleger erfolgreich beraten', target: 500, suffix: '+' },
+  { value: '100%', label: 'Unabhängig & herstellerneutral', target: 100, suffix: '%' },
 ]
+
+function useCountUp(target, duration = 1500) {
+  const [count, setCount] = useState(0)
+  const ref = useRef(null)
+  const started = useRef(false)
+
+  useEffect(() => {
+    const el = ref.current
+    if (!el) return
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting && !started.current) {
+          started.current = true
+          const startTime = performance.now()
+          const tick = (now) => {
+            const elapsed = now - startTime
+            const progress = Math.min(elapsed / duration, 1)
+            const eased = 1 - Math.pow(1 - progress, 3)
+            setCount(Math.round(eased * target))
+            if (progress < 1) requestAnimationFrame(tick)
+          }
+          requestAnimationFrame(tick)
+        }
+      },
+      { threshold: 0.3 }
+    )
+    observer.observe(el)
+    return () => observer.disconnect()
+  }, [target, duration])
+
+  return [count, ref]
+}
+
+function StatItem({ stat, delay, idx }) {
+  const [count, ref] = useCountUp(stat.target)
+  return (
+    <motion.div
+      ref={ref}
+      initial={{ opacity: 0, y: 40 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: '-60px' }}
+      transition={{ duration: 0.7, ease: 'easeOut', delay }}
+      className="bg-[#111111] border border-white/5 p-7 flex items-center gap-6 hover:border-[#C9A84C]/15 transition-colors duration-300"
+    >
+      <div className="flex-shrink-0 w-24 text-right">
+        <span className="font-serif text-4xl text-[#C9A84C] font-bold">
+          {count}{stat.suffix}
+        </span>
+      </div>
+      <div className="w-px h-10 bg-[#C9A84C]/15 flex-shrink-0" />
+      <p className="text-gray-300 text-sm leading-snug">{stat.label}</p>
+    </motion.div>
+  )
+}
 
 export default function AboutUs() {
   return (
@@ -10,7 +67,12 @@ export default function AboutUs() {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 lg:gap-20 items-start">
           {/* Text block */}
-          <div>
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: '-60px' }}
+            transition={{ duration: 0.7, ease: 'easeOut' }}
+          >
             <div className="flex items-center gap-4 mb-6">
               <div className="h-px w-8 bg-[#C9A84C]/50" />
               <span className="text-[#C9A84C] text-xs font-medium tracking-[0.3em] uppercase">Über uns</span>
@@ -38,7 +100,6 @@ export default function AboutUs() {
               </p>
             </div>
 
-            {/* Divider ornament */}
             <div className="flex items-center gap-3 mt-10">
               <div className="h-px w-6 bg-[#C9A84C]/40" />
               <svg className="w-3 h-3 text-[#C9A84C]/40" fill="currentColor" viewBox="0 0 16 16">
@@ -46,29 +107,26 @@ export default function AboutUs() {
               </svg>
               <div className="h-px flex-1 bg-[#C9A84C]/10" />
             </div>
-          </div>
+          </motion.div>
 
-          {/* Stats */}
+          {/* Stats with count-up */}
           <div className="space-y-4">
             {stats.map((stat, idx) => (
-              <div
-                key={idx}
-                className="bg-[#111111] border border-white/5 p-7 flex items-center gap-6 hover:border-[#C9A84C]/15 transition-colors duration-300"
-              >
-                <div className="flex-shrink-0 w-24 text-right">
-                  <span className="font-serif text-4xl text-[#C9A84C] font-bold">{stat.value}</span>
-                </div>
-                <div className="w-px h-10 bg-[#C9A84C]/15 flex-shrink-0" />
-                <p className="text-gray-300 text-sm leading-snug">{stat.label}</p>
-              </div>
+              <StatItem key={idx} stat={stat} delay={idx * 0.15} idx={idx} />
             ))}
 
-            <div className="bg-[#111111] border border-[#C9A84C]/10 p-7 mt-2">
+            <motion.div
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: '-60px' }}
+              transition={{ duration: 0.7, ease: 'easeOut', delay: 0.45 }}
+              className="bg-[#111111] border border-[#C9A84C]/10 p-7 mt-2"
+            >
               <blockquote className="font-serif text-lg italic text-gray-300 leading-relaxed">
                 "Unser Versprechen: Wir beraten Sie so, wie wir es für unsere eigene Familie tun würden."
               </blockquote>
               <p className="mt-3 text-xs text-[#C9A84C] tracking-[0.15em] uppercase">— Das Edelmetalle-Wertentwickler-Team</p>
-            </div>
+            </motion.div>
           </div>
         </div>
       </div>

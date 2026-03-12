@@ -1,3 +1,5 @@
+import { motion } from 'framer-motion'
+
 const reasons = [
   {
     icon: (
@@ -41,12 +43,27 @@ const reasons = [
   },
 ]
 
+const cardVariants = {
+  hidden: { opacity: 0, y: 40 },
+  visible: (i) => ({
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.7, ease: 'easeOut', delay: i * 0.15 },
+  }),
+}
+
 export default function WhyPreciousMetals() {
   return (
     <section id="warum" className="bg-[#0D0D0D] py-24 lg:py-32">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="text-center mb-16">
+        <motion.div
+          className="text-center mb-16"
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-60px' }}
+          transition={{ duration: 0.7, ease: 'easeOut' }}
+        >
           <div className="flex items-center justify-center gap-4 mb-5">
             <div className="h-px w-8 bg-[#C9A84C]/50" />
             <span className="text-[#C9A84C] text-xs font-medium tracking-[0.3em] uppercase">Warum Edelmetalle</span>
@@ -60,13 +77,18 @@ export default function WhyPreciousMetals() {
           <p className="max-w-xl mx-auto text-gray-400 text-lg">
             In einer Welt voller finanzieller Unsicherheiten bieten Gold und Silber zeitlose Stabilität.
           </p>
-        </div>
+        </motion.div>
 
         {/* Cards grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
           {reasons.map((reason, idx) => (
-            <div
+            <motion.div
               key={idx}
+              custom={idx}
+              variants={cardVariants}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: '-60px' }}
               className="group bg-[#111111] border border-white/5 p-8 hover:border-[#C9A84C]/20 transition-all duration-300"
             >
               <div className="flex items-start gap-5">
@@ -78,7 +100,7 @@ export default function WhyPreciousMetals() {
                   <p className="text-gray-400 leading-relaxed text-[15px]">{reason.text}</p>
                 </div>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>

@@ -1,3 +1,5 @@
+import { motion } from 'framer-motion'
+
 const steps = [
   {
     number: '01',
@@ -22,12 +24,27 @@ const steps = [
   },
 ]
 
+const stepVariants = {
+  hidden: { opacity: 0, y: 40 },
+  visible: (i) => ({
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.7, ease: 'easeOut', delay: i * 0.15 },
+  }),
+}
+
 export default function HowItWorks() {
   return (
     <section id="prozess" className="bg-[#0A0A0A] py-24 lg:py-32">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="text-center mb-20">
+        <motion.div
+          className="text-center mb-20"
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-60px' }}
+          transition={{ duration: 0.7, ease: 'easeOut' }}
+        >
           <div className="flex items-center justify-center gap-4 mb-5">
             <div className="h-px w-8 bg-[#C9A84C]/50" />
             <span className="text-[#C9A84C] text-xs font-medium tracking-[0.3em] uppercase">Der Prozess</span>
@@ -39,12 +56,20 @@ export default function HowItWorks() {
           <p className="max-w-xl mx-auto text-gray-400 text-lg">
             Drei klare Schritte — begleitet von erfahrenen Experten.
           </p>
-        </div>
+        </motion.div>
 
         {/* Steps */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10 lg:gap-16">
           {steps.map((step, idx) => (
-            <div key={idx} className="flex flex-col">
+            <motion.div
+              key={idx}
+              custom={idx}
+              variants={stepVariants}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: '-60px' }}
+              className="flex flex-col"
+            >
               {/* Step header */}
               <div className="flex items-center gap-4 mb-6">
                 <span className="font-serif text-5xl font-bold text-[#D4AF37] leading-none select-none tabular-nums">
@@ -60,12 +85,18 @@ export default function HowItWorks() {
               <span className="self-start text-[11px] text-[#C9A84C] tracking-[0.15em] uppercase border border-[#C9A84C]/20 px-3 py-1.5">
                 {step.badge}
               </span>
-            </div>
+            </motion.div>
           ))}
         </div>
 
         {/* Bottom CTA nudge */}
-        <div className="mt-16 text-center">
+        <motion.div
+          className="mt-16 text-center"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-60px' }}
+          transition={{ duration: 0.7, ease: 'easeOut', delay: 0.45 }}
+        >
           <a
             href="#kontakt"
             className="inline-flex items-center gap-2 text-[#C9A84C] text-sm hover:text-[#E2C97E] transition-colors tracking-wide group"
@@ -75,7 +106,7 @@ export default function HowItWorks() {
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
             </svg>
           </a>
-        </div>
+        </motion.div>
       </div>
     </section>
   )

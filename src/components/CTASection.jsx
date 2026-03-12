@@ -1,4 +1,11 @@
+import { motion } from 'framer-motion'
 import ctaBg from '../assets/cta-bg.png'
+
+const bullets = [
+  'Persönliche Beratung auf Augenhöhe',
+  'Transparente Preisgestaltung',
+  'Sichere Abwicklung in Deutschland',
+]
 
 export default function CTASection() {
   return (
@@ -29,46 +36,75 @@ export default function CTASection() {
 
       <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         {/* Ornament */}
-        <div className="flex items-center justify-center gap-4 mb-8">
+        <motion.div
+          className="flex items-center justify-center gap-4 mb-8"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-60px' }}
+          transition={{ duration: 0.6, ease: 'easeOut' }}
+        >
           <div className="h-px w-12 bg-[#C9A84C]/40" />
           <svg className="w-4 h-4 text-[#C9A84C]/50" fill="currentColor" viewBox="0 0 16 16">
             <path d="M8 0L9.797 5.753H16L10.902 9.247L12.699 15L8 11.506L3.301 15L5.098 9.247L0 5.753H6.203L8 0Z" />
           </svg>
           <div className="h-px w-12 bg-[#C9A84C]/40" />
-        </div>
+        </motion.div>
 
-        <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl text-white font-bold mb-6 leading-tight">
+        {/* Headline */}
+        <motion.h2
+          className="font-serif text-3xl sm:text-4xl md:text-5xl text-white font-bold mb-6 leading-tight"
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-60px' }}
+          transition={{ duration: 0.7, ease: 'easeOut', delay: 0.1 }}
+        >
           Starten Sie noch heute —
           <br className="hidden sm:block" />
           <em className="not-italic italic text-[#C9A84C]"> kostenlos und unverbindlich</em>
-        </h2>
+        </motion.h2>
 
-        <p className="text-gray-400 text-lg sm:text-xl leading-relaxed mb-10 max-w-2xl mx-auto">
+        {/* Subtext */}
+        <motion.p
+          className="text-gray-400 text-lg sm:text-xl leading-relaxed mb-10 max-w-2xl mx-auto"
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-60px' }}
+          transition={{ duration: 0.7, ease: 'easeOut', delay: 0.2 }}
+        >
           Ein persönliches Gespräch mit einem unserer Experten kostet Sie nichts.
           Es könnte das Wichtigste sein, was Sie heute für Ihr Vermögen tun.
-        </p>
+        </motion.p>
 
-        <a
-          href="#kontakt-formular"
-          className="inline-flex items-center gap-3 px-10 py-5 bg-[#C9A84C] hover:bg-[#E2C97E] text-[#0A0A0A] text-base font-semibold tracking-wide transition-all duration-200 hover:shadow-[0_0_48px_rgba(201,168,76,0.4)]"
+        {/* CTA Button */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-60px' }}
+          transition={{ duration: 0.7, ease: 'easeOut', delay: 0.3 }}
         >
-          Jetzt Gespräch buchen
-          <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-          </svg>
-        </a>
-
-        <p className="mt-6 text-gray-600 text-sm">
-          Keine Verpflichtungen · Keine versteckten Kosten · 100% unverbindlich
-        </p>
+          <a
+            href="#kontakt-formular"
+            className="inline-flex items-center gap-3 px-10 py-5 bg-[#C9A84C] hover:bg-[#E2C97E] text-[#0A0A0A] text-base font-semibold tracking-wide transition-all duration-200 hover:shadow-[0_0_48px_rgba(201,168,76,0.4)]"
+          >
+            Jetzt Gespräch buchen
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg>
+          </a>
+          <p className="mt-6 text-gray-600 text-sm">
+            Keine Verpflichtungen · Keine versteckten Kosten · 100% unverbindlich
+          </p>
+        </motion.div>
 
         {/* Feature bullets */}
-        <div className="mt-12 flex flex-col sm:flex-row items-center justify-center gap-6 text-sm text-gray-500">
-          {[
-            'Persönliche Beratung auf Augenhöhe',
-            'Transparente Preisgestaltung',
-            'Sichere Abwicklung in Deutschland',
-          ].map((item) => (
+        <motion.div
+          className="mt-12 flex flex-col sm:flex-row items-center justify-center gap-6 text-sm text-gray-500"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true, margin: '-60px' }}
+          transition={{ duration: 0.7, ease: 'easeOut', delay: 0.45 }}
+        >
+          {bullets.map((item) => (
             <div key={item} className="flex items-center gap-2">
               <svg className="w-4 h-4 text-[#C9A84C]/60 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
@@ -76,7 +112,7 @@ export default function CTASection() {
               {item}
             </div>
           ))}
-        </div>
+        </motion.div>
       </div>
 
       {/* Bottom decorative border */}

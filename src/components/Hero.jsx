@@ -52,7 +52,7 @@ export default function Hero() {
         />
       </div>
 
-      <div className="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center pt-24 pb-20">
+      <div className="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center pt-32 pb-20">
         {/* Eyebrow label */}
         <motion.div {...fadeUp(0.2)} className="flex items-center justify-center gap-4 mb-8">
           <div className="h-px w-10 bg-[#C9A84C]/50" />

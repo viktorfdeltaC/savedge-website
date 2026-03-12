@@ -1,4 +1,5 @@
 import Navbar from './components/Navbar'
+import PriceTicker from './components/PriceTicker'
 import Hero from './components/Hero'
 import WhyPreciousMetals from './components/WhyPreciousMetals'
 import HowItWorks from './components/HowItWorks'
@@ -10,6 +11,7 @@ export default function App() {
   return (
     <div className="bg-[#0A0A0A] text-gray-200">
       <Navbar />
+      <PriceTicker />
       <main>
         <Hero />
         <WhyPreciousMetals />

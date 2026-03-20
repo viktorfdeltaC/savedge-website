@@ -1,3 +1,9 @@
+import { useEffect, useRef } from 'react'
+import { gsap } from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
+
+gsap.registerPlugin(ScrollTrigger)
+
 const NAV_LINKS = [
   { label: 'Über uns', id: 'about' },
   { label: 'Athleten', id: 'athletes' },
@@ -16,8 +22,28 @@ function scrollTo(id) {
 }
 
 export default function Footer() {
+  const footerRef = useRef(null)
+
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      gsap.from('.footer__top, .footer__divider, .footer__bottom', {
+        y: 24,
+        opacity: 0,
+        duration: 0.8,
+        stagger: 0.15,
+        ease: 'power2.out',
+        scrollTrigger: {
+          trigger: footerRef.current,
+          start: 'top 90%',
+        },
+      })
+    }, footerRef)
+
+    return () => ctx.revert()
+  }, [])
+
   return (
-    <footer className="footer" id="contact">
+    <footer ref={footerRef} className="footer" id="contact">
       <div className="container">
         <div className="footer__top">
           {/* Brand / Logo */}

@@ -50,8 +50,8 @@ export default function WhoWeWorkWith() {
         </div>
 
         <div className="who__grid">
-          {PARTNERS.map((p) => (
-            <div key={p.number} className="who-card">
+          {PARTNERS.map((p, i) => (
+            <div key={p.number} className={`who-card${i === 0 ? ' who-card--featured' : ''}`}>
               <span className="who-card__number">{p.number}</span>
               <h3 className="who-card__title">{p.title}</h3>
               <p className="who-card__text">{p.text}</p>

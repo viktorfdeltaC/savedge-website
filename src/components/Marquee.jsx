@@ -13,7 +13,7 @@ export default function Marquee() {
       <div className="marquee__track">
         {[...ITEMS, ...ITEMS].map((item, i) => (
           <span key={i} className="marquee__item">
-            {item}<span className="marquee__sep"> · </span>
+            {item}<span className="marquee__sep"> ✕ </span>
           </span>
         ))}
       </div>

@@ -30,10 +30,10 @@ export default function Pillars() {
           trigger: sectionRef.current,
           start: 'top 78%',
         },
-        y: 50,
+        x: -40,
         opacity: 0,
-        duration: 0.9,
-        stagger: 0.15,
+        duration: 0.8,
+        stagger: 0.12,
         ease: 'power3.out',
       })
     }, sectionRef)
@@ -43,13 +43,15 @@ export default function Pillars() {
 
   return (
     <section ref={sectionRef} className="pillars" id="services">
-      <div className="pillars__grid container">
-        {PILLARS.map((p, i) => (
-          <div key={p.number} className={`pillar${i === 0 ? ' pillar--feature' : ''}`}>
+      <div className="pillars__header container">
+        <span className="section-label">Leistungen</span>
+      </div>
+      <div className="pillars__list container">
+        {PILLARS.map((p) => (
+          <div key={p.number} className="pillar">
             <span className="pillar__number">{p.number}</span>
             <h3 className="pillar__title">{p.title}</h3>
             <p className="pillar__text">{p.text}</p>
-            {i === 0 && <div className="pillar__accent-line" />}
           </div>
         ))}
       </div>

@@ -8,16 +8,18 @@ export default function QuoteStrip() {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      gsap.from(quoteRef.current, {
-        scrollTrigger: {
-          trigger: sectionRef.current,
-          start: 'top 78%',
-        },
-        x: -30,
-        opacity: 0,
-        duration: 1.1,
-        ease: 'power3.out',
-      })
+      gsap.fromTo(quoteRef.current,
+        { clipPath: 'inset(0 100% 0 0)' },
+        {
+          clipPath: 'inset(0 0% 0 0)',
+          scrollTrigger: {
+            trigger: sectionRef.current,
+            start: 'top 75%',
+          },
+          duration: 1.2,
+          ease: 'power3.out',
+        }
+      )
     }, sectionRef)
 
     return () => ctx.revert()
@@ -27,10 +29,9 @@ export default function QuoteStrip() {
     <section ref={sectionRef} className="quote-strip">
       <div className="container">
         <div ref={quoteRef} className="quote-strip__inner">
-          <div className="quote-strip__line" />
           <p className="quote-strip__text">
-            Wir bringen <span className="quote-accent">Struktur</span> in deine Ambition.<br />
-            Ohne den <span className="quote-accent">Kern</span> zu verändern.
+            Wir bringen Struktur<br />
+            in deine Ambition.
           </p>
         </div>
       </div>

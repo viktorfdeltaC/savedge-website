@@ -48,7 +48,7 @@ export default function FightWeekTeaser() {
             <div className="fight-week__accent-bar" />
             <div className="fight-week__right-content">
               <p className="fight-week__sub">
-                Das Kampfsport-TV-Magazin. Echte Kämpfer. Echte Geschichten. Echter Impact.
+                Das erste Kampfsport-TV-Magazin für den DACH-Raum. Nah an den Athleten. Nah an den Kämpfen.
               </p>
               <button
                 className="btn btn--outline"
@@ -56,7 +56,7 @@ export default function FightWeekTeaser() {
                   document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })
                 }
               >
-                Mehr erfahren
+                Fight Week entdecken
               </button>
             </div>
           </div>

@@ -100,8 +100,8 @@ export default function Hero() {
       <div className="hero__footer">
         <div className="hero__footer-inner container">
           <p ref={subRef} className="hero__sub">
-            Wir entwickeln Karrieren, Marken und Formate im Kampfsport.<br />
-            Vom lokalen Gym bis zur großen Bühne.
+            Kämpfer brauchen mehr als Talent.<br />
+            Wir bauen das System dahinter — Karriere, Marke und Plattform.
           </p>
           <div ref={actionsRef} className="hero__actions">
             <button
@@ -110,7 +110,7 @@ export default function Hero() {
                 document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' })
               }
             >
-              Unsere Leistungen
+              Was wir tun
             </button>
             <button
               className="btn btn--text"

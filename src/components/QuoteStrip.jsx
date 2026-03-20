@@ -30,8 +30,9 @@ export default function QuoteStrip() {
       <div className="container">
         <div ref={quoteRef} className="quote-strip__inner">
           <p className="quote-strip__text">
-            Wir bringen Struktur<br />
-            in deine Ambition.
+            Hinter jedem<br />
+            Titelträger steht<br />
+            ein System.
           </p>
         </div>
       </div>

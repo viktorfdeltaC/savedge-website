@@ -6,17 +6,17 @@ const PILLARS = [
   {
     number: '01',
     title: 'Athleten Management',
-    text: 'Karrierestrategie, Vertragsverhandlungen und Markenaufbau für Kämpfer, die liefern.',
+    text: 'Verträge, Karrierestrategie, Markenaufbau. Alles was zwischen dir und der nächsten Stufe steht.',
   },
   {
     number: '02',
     title: 'Fight Marketing',
-    text: 'Kampagnenstrategie, Eventpromotion und Reichweitenaufbau im DACH-Raum.',
+    text: 'Dein nächster Kampf soll gesehen werden. Wir bauen die Sichtbarkeit, die er verdient.',
   },
   {
     number: '03',
     title: 'SavEdge Fight Week',
-    text: 'TV-Magazinformat. Echte Kämpfer. Echte Geschichten. Jetzt im Aufbau.',
+    text: 'Unser eigenes TV-Magazin für den DACH-Raum. Kämpfer mit Geschichte. In Produktion.',
   },
 ]
 

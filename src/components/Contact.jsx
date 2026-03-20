@@ -44,7 +44,7 @@ export default function Contact() {
               LASS UNS<br /><span className="contact__headline-accent">REDEN.</span>
             </h2>
             <p className="contact__sub">
-              Wir sind offen für Athleten, Marken und Medienpartnerschaften.
+              Athlet, Marke oder Medienpartner — schreib uns. Wir antworten.
             </p>
           </div>
 

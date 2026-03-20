@@ -6,17 +6,17 @@ const PARTNERS = [
   {
     number: '01',
     title: 'Marken & Sponsoren',
-    text: 'Erreicht eine loyale, unterversorgte Zielgruppe durch authentische Athleten-Partnerschaften und Medienplatzierungen.',
+    text: 'Kampfsport-Fans sind loyal, kaufkräftig und kaum besetzt. Wir verbinden euch mit den Athleten, die eure Marke tragen können.',
   },
   {
     number: '02',
     title: 'Athleten & Coaches',
-    text: 'Wir bauen das System um deine Leistung. Management, Sichtbarkeit und eine Plattform die du verdienst.',
+    text: 'Dein Job ist zu gewinnen. Unser Job ist alles andere — Verträge, Auftritte, Markenaufbau.',
   },
   {
     number: '03',
     title: 'Medien & TV-Partner',
-    text: 'Originale Formate, Fight-Content und distributionsfertige Produktionen für den DACH-Markt.',
+    text: 'Fertige Formate, authentischer Fight-Content und ein Netzwerk aus Athleten und Events. Bereit für euren Kanal.',
   },
 ]
 

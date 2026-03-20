@@ -1,10 +1,10 @@
 const ITEMS = [
-  'Athlete Management',
+  'Athleten Management',
   'Fight Marketing',
-  'Savedge Fight Week',
+  'SavEdge Fight Week',
   'DACH Region',
-  'Real Fighters',
-  'Real Stories',
+  'Vienna · Zurich · Berlin',
+  'Kampfsport',
 ]
 
 export default function Marquee() {

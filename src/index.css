@@ -874,7 +874,8 @@ img, svg {
 }
 
 .quote-strip__inner {
-  overflow: visible;
+  /* No container — text anchors to left edge and bleeds right intentionally */
+  padding-left: var(--pad);
 }
 
 .quote-strip__text {
@@ -1465,8 +1466,8 @@ img, svg {
   }
 
   .quote-strip__text {
-    font-size: clamp(56px, 14vw, 120px);
-    white-space: nowrap;
+    font-size: clamp(48px, 13vw, 80px);
+    white-space: normal;
   }
 
   /* WhoWeWorkWith mobile */

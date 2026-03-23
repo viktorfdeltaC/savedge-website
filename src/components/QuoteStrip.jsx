@@ -27,14 +27,12 @@ export default function QuoteStrip() {
 
   return (
     <section ref={sectionRef} className="quote-strip">
-      <div className="container">
-        <div ref={quoteRef} className="quote-strip__inner">
-          <p className="quote-strip__text">
-            Hinter jedem<br />
-            Titelträger steht<br />
-            ein System.
-          </p>
-        </div>
+      <div ref={quoteRef} className="quote-strip__inner">
+        <p className="quote-strip__text">
+          Hinter jedem<br />
+          Titelträger steht<br />
+          ein System.
+        </p>
       </div>
     </section>
   )

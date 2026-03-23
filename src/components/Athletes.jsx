@@ -14,8 +14,8 @@ const ATHLETES = [
     img: '/savedge/website/joscha2.png',
   },
   {
-    name: 'Phil',
-    discipline: 'Kickboxing',
+    name: 'Philipp Spak',
+    discipline: 'Kickboxing K1 / MMA',
     bio: 'Titelträger. Technisch. Unbeirrbar.',
     stats: [
       { label: 'Gewichtsklasse', value: 'Mittelgewicht' },

@@ -37,9 +37,7 @@ export default function App() {
         <Marquee />
         <Divider />
         <Pillars />
-        <Divider />
         <Stats />
-        <Divider />
         <Athletes />
         <Divider />
         <QuoteStrip />

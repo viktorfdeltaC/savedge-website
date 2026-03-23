@@ -36,7 +36,7 @@ const ATHLETES = [
   {
     name: 'David Hahmann',
     discipline: 'MMA & Combat Coach',
-    bio: 'Seine Athleten stehen bei BKFC und K.O.T.S. Wer bei ihm trainiert, ist bereit.',
+    bio: 'Seine Athleten stehen bei BKFC und K.O.T.S — wer bei ihm trainiert, ist bereit.',
     stats: [
       { label: 'Rolle', value: 'Coach' },
       { label: 'Status', value: 'Aktiv' },

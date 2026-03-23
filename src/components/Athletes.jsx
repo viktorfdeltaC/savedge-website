@@ -11,7 +11,7 @@ const ATHLETES = [
       { label: 'Gewichtsklasse', value: 'Heavyweight' },
       { label: 'Status', value: 'Aktiv' },
     ],
-    img: '/savedge/website/joscha1.png',
+    img: '/savedge/website/joscha2.png',
   },
   {
     name: 'Phil',

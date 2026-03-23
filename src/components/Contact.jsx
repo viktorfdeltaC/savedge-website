@@ -5,7 +5,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 const LINKS = [
   { label: 'Email', value: 'contact@savedge-entertainment.com', href: 'mailto:contact@savedge-entertainment.com' },
   { label: 'Instagram', value: '@savedge.entertainment', href: 'https://www.instagram.com/savedge.entertainment/' },
-  { label: 'WhatsApp', value: 'Direkt schreiben →', href: '#' },
+  { label: 'WhatsApp', value: 'Direkt schreiben →', href: 'https://wa.me/491772289693' },
 ]
 
 export default function Contact() {

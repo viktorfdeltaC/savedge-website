@@ -4,11 +4,11 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
 const ATHLETES = [
   {
-    name: 'Joscha',
-    discipline: 'MMA',
+    name: 'Joscha Plum',
+    discipline: 'MMA / BJJ',
     bio: 'Kämpfer mit Substanz. Präsenz die man spürt.',
     stats: [
-      { label: 'Gewichtsklasse', value: 'Heavyweight' },
+      { label: 'Gewichtsklasse', value: 'Welterweight' },
       { label: 'Status', value: 'Aktiv' },
     ],
     img: '/savedge/website/joscha2.png',

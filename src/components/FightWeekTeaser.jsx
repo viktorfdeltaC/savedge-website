@@ -67,14 +67,10 @@ export default function FightWeekTeaser() {
               Das TV-Magazin, das dahin geht wo Kameras sonst nicht hinkommen.
               Kampfsport von innen — aus dem Camp, der Halle, dem Käfig.
             </p>
-            <button
-              className="btn btn--outline"
-              onClick={() =>
-                document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })
-              }
-            >
-              Fight Week entdecken
-            </button>
+            <div className="fight-week__status">
+              <span className="fight-week__status-dot" />
+              <span className="fight-week__status-text">In Produktion</span>
+            </div>
           </div>
         </div>
       </div>

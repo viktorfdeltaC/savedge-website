@@ -11,11 +11,6 @@ const NAV_LINKS = [
   { label: 'Fight Week', id: 'fight-week' },
 ]
 
-const SOCIAL = [
-  { label: 'Instagram', href: '#' },
-  { label: 'LinkedIn', href: '#' },
-  { label: 'YouTube', href: '#' },
-]
 
 function scrollTo(id) {
   document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
@@ -71,19 +66,6 @@ export default function Footer() {
                 </button>
               ))}
             </nav>
-            <div className="footer__social">
-              {SOCIAL.map(({ label, href }) => (
-                <a
-                  key={label}
-                  href={href}
-                  className="footer__social-link"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  {label}
-                </a>
-              ))}
-            </div>
           </div>
         </div>
 

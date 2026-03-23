@@ -14,6 +14,7 @@ import WhoWeWorkWith from './components/WhoWeWorkWith'
 import FightWeekTeaser from './components/FightWeekTeaser'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
+import ScrollProgress from './components/ScrollProgress'
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -30,6 +31,7 @@ export default function App() {
 
   return (
     <>
+      <ScrollProgress />
       <CustomCursor />
       <Nav />
       <main style={{ paddingTop: 'var(--nav-h)' }}>

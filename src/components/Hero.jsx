@@ -72,7 +72,7 @@ export default function Hero() {
       {/* Editorial topbar */}
       <div ref={topbarRef} className="hero__topbar">
         <span className="hero__label">◆ Combat Sports Agency</span>
-        <span className="hero__est">Vienna · Zurich · Berlin · 2024</span>
+        <span className="hero__est">Vienna · Zurich · Berlin · Munich</span>
       </div>
 
       {/* Main body: type left, image right */}

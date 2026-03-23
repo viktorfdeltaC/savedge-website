@@ -3,7 +3,7 @@ const ITEMS = [
   'Fight Marketing',
   'SavEdge Fight Week',
   'DACH Region',
-  'Vienna · Zurich · Berlin',
+  'Vienna · Zurich · Berlin · Munich',
   'Kampfsport',
 ]
 

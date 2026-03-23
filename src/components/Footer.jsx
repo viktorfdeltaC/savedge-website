@@ -75,7 +75,7 @@ export default function Footer() {
           <p className="footer__copy">
             © {new Date().getFullYear()} SavEdge Entertainment. Alle Rechte vorbehalten.
           </p>
-          <p className="footer__location">Vienna · Zurich · Berlin</p>
+          <p className="footer__location">Vienna · Zurich · Berlin · Munich</p>
         </div>
       </div>
     </footer>

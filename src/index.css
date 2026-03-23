@@ -419,12 +419,29 @@ img, svg {
   overflow: hidden;
 }
 
+/* Cinematic green spotlight — blends with photo to lit the fighter */
+.hero__media::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    ellipse at 58% 38%,
+    rgba(154, 224, 64, 0.28) 0%,
+    rgba(154, 224, 64, 0.1) 45%,
+    transparent 72%
+  );
+  mix-blend-mode: screen;
+  z-index: 1;
+  pointer-events: none;
+}
+
 .hero__img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   object-position: top center;
-  filter: grayscale(15%) contrast(1.08);
+  /* Desaturate so green glow becomes the sole color accent */
+  filter: grayscale(40%) contrast(1.12) brightness(0.88);
   display: block;
 }
 
@@ -432,8 +449,23 @@ img, svg {
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(to right, var(--bg) 0%, rgba(13, 13, 11, 0.15) 45%, transparent 100%),
-    linear-gradient(to top, rgba(13, 13, 11, 0.6) 0%, transparent 30%);
+    linear-gradient(to right, var(--bg) 0%, rgba(13, 13, 11, 0.2) 42%, transparent 100%),
+    linear-gradient(to top, rgba(13, 13, 11, 0.75) 0%, transparent 32%);
+  z-index: 2;
+  /* Halftone texture on top of the overlay */
+  -webkit-mask-image: radial-gradient(ellipse at center, black 60%, transparent 100%);
+}
+
+/* Subtle halftone grain over the media area */
+.hero__media::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle, rgba(0,0,0,0.08) 1px, transparent 1px);
+  background-size: 18px 18px;
+  z-index: 3;
+  pointer-events: none;
+  mix-blend-mode: multiply;
 }
 
 .hero__footer {

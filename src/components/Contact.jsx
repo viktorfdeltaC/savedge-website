@@ -3,7 +3,7 @@ import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
 const LINKS = [
-  { label: 'Email', value: 'info@savedge.com', href: 'mailto:info@savedge.com' },
+  { label: 'Email', value: 'contact@savedge-entertainment.com', href: 'mailto:contact@savedge-entertainment.com' },
   { label: 'Instagram', value: '@savedge_entertainment', href: '#' },
   { label: 'WhatsApp', value: 'Direkt schreiben →', href: '#' },
 ]

@@ -4,7 +4,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
 const LINKS = [
   { label: 'Email', value: 'contact@savedge-entertainment.com', href: 'mailto:contact@savedge-entertainment.com' },
-  { label: 'Instagram', value: '@savedge.entertainment', href: 'https://www.instagram.com/savedge.entertainment/' },
+  { label: 'Instagram', value: '@savedge.entertainment', href: 'https://www.instagram.com/savedge.entertainment/', target: '_blank' },
   { label: 'WhatsApp', value: 'Direkt schreiben →', href: 'https://wa.me/491772289693' },
 ]
 
@@ -50,7 +50,7 @@ export default function Contact() {
 
           <div className="contact__right">
             {LINKS.map((l) => (
-              <a key={l.label} href={l.href} className="contact__link-item">
+              <a key={l.label} href={l.href} className="contact__link-item" target={l.target} rel={l.target === '_blank' ? 'noopener noreferrer' : undefined}>
                 <span className="contact__link-label">{l.label}</span>
                 <span className="contact__link-value">{l.value}</span>
               </a>

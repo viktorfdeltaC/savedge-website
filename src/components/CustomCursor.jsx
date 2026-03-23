@@ -34,7 +34,7 @@ export default function CustomCursor() {
           width: 12,
           height: 12,
           borderRadius: '50%',
-          backgroundColor: '#C9A84C',
+          backgroundColor: '#9AE040',
           opacity: 0.9,
           willChange: 'transform',
         }}
@@ -50,7 +50,7 @@ export default function CustomCursor() {
           width: 28,
           height: 28,
           borderRadius: '50%',
-          border: '1px solid #C9A84C',
+          border: '1px solid #9AE040',
           opacity: 0.4,
           willChange: 'transform',
         }}

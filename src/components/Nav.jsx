@@ -78,12 +78,12 @@ export default function Nav() {
         </ul>
 
         {/* CTA (desktop) */}
-        <button
+        <a
+          href="mailto:contact@savedge-entertainment.com"
           className="btn btn--accent nav__cta"
-          onClick={() => scrollTo('contact')}
         >
           Kontakt
-        </button>
+        </a>
 
         {/* Hamburger (mobile) */}
         <button
@@ -111,12 +111,12 @@ export default function Nav() {
             </li>
           ))}
         </ul>
-        <button
+        <a
+          href="mailto:contact@savedge-entertainment.com"
           className="btn btn--accent nav__mobile-cta"
-          onClick={() => handleNavLink('contact')}
         >
           Kontakt
-        </button>
+        </a>
       </div>,
       document.body
     )}

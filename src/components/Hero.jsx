@@ -1,4 +1,5 @@
 import { useEffect, useRef } from 'react'
+import { motion, useMotionValue, useTransform, useSpring } from 'framer-motion'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
@@ -11,6 +12,26 @@ export default function Hero() {
   const subRef = useRef(null)
   const actionsRef = useRef(null)
   const mediaRef = useRef(null)
+
+  // Mouse parallax
+  const mouseX = useMotionValue(0)
+  const mouseY = useMotionValue(0)
+  const springX = useSpring(mouseX, { stiffness: 55, damping: 18 })
+  const springY = useSpring(mouseY, { stiffness: 55, damping: 18 })
+  const imgX = useTransform(springX, [-1, 1], [14, -14])
+  const imgY = useTransform(springY, [-1, 1], [8, -8])
+
+  const handleMouseMove = (e) => {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return
+    const rect = sectionRef.current.getBoundingClientRect()
+    mouseX.set((e.clientX - rect.left) / rect.width * 2 - 1)
+    mouseY.set((e.clientY - rect.top) / rect.height * 2 - 1)
+  }
+
+  const handleMouseLeave = () => {
+    mouseX.set(0)
+    mouseY.set(0)
+  }
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -51,7 +72,7 @@ export default function Hero() {
           ease: 'power3.out',
         }, 0.3)
 
-      // Parallax on scroll
+      // Scroll parallax on inner media div
       gsap.to(mediaRef.current, {
         y: -50,
         ease: 'none',
@@ -68,7 +89,13 @@ export default function Hero() {
   }, [])
 
   return (
-    <section ref={sectionRef} className="hero" id="about">
+    <section
+      ref={sectionRef}
+      className="hero"
+      id="about"
+      onMouseMove={handleMouseMove}
+      onMouseLeave={handleMouseLeave}
+    >
       {/* Editorial topbar */}
       <div ref={topbarRef} className="hero__topbar">
         <span className="hero__label">◆ Combat Sports Agency</span>
@@ -86,14 +113,20 @@ export default function Hero() {
           <div ref={ruleRef} className="hero__accent-rule" />
         </div>
 
-        <div ref={mediaRef} className="hero__media">
-          <img
-            src="/savedge/website/joscha1.png"
-            alt="Joscha — MMA Athlete"
-            className="hero__img"
-          />
-          <div className="hero__img-overlay" />
-        </div>
+        {/* Mouse parallax wrapper — Framer Motion handles x/y offset */}
+        <motion.div
+          className="hero__media-parallax"
+          style={{ x: imgX, y: imgY }}
+        >
+          <div ref={mediaRef} className="hero__media">
+            <img
+              src="/savedge/website/joscha1.png"
+              alt="Joscha — MMA Athlete"
+              className="hero__img"
+            />
+            <div className="hero__img-overlay" />
+          </div>
+        </motion.div>
       </div>
 
       {/* Bottom info bar */}

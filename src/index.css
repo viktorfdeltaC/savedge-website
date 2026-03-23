@@ -414,9 +414,15 @@ img, svg {
   transform-origin: left center;
 }
 
+.hero__media-parallax {
+  overflow: hidden;
+  will-change: transform;
+}
+
 .hero__media {
   position: relative;
   overflow: hidden;
+  height: 100%;
 }
 
 /* Cinematic green spotlight — blends with photo to lit the fighter */
@@ -766,6 +772,8 @@ img, svg {
   scroll-snap-align: start;
   overflow: hidden;
   background-color: var(--bg-surface);
+  will-change: transform;
+  transform: perspective(800px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1);
 }
 
 .athlete-card__img {

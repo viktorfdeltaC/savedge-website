@@ -98,6 +98,25 @@ export default function Athletes() {
     return () => ctx.revert()
   }, [])
 
+  const handleTiltMove = (e) => {
+    if (isDragging.current) return
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return
+    const card = e.currentTarget
+    const rect = card.getBoundingClientRect()
+    const x = e.clientX - rect.left
+    const y = e.clientY - rect.top
+    const rotateY = ((x / rect.width) * 2 - 1) * 8
+    const rotateX = -((y / rect.height) * 2 - 1) * 6
+    card.style.transition = 'transform 0.06s linear'
+    card.style.transform = `perspective(800px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.03, 1.03, 1.03)`
+  }
+
+  const handleTiltLeave = (e) => {
+    const card = e.currentTarget
+    card.style.transition = 'transform 0.5s cubic-bezier(0.16, 1, 0.3, 1)'
+    card.style.transform = 'perspective(800px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)'
+  }
+
   return (
     <section ref={sectionRef} className="athletes" id="athletes">
       <div className="container">
@@ -117,7 +136,12 @@ export default function Athletes() {
         onMouseLeave={stopDrag}
       >
         {ATHLETES.map((a) => (
-          <div key={a.name} className="athlete-card">
+          <div
+            key={a.name}
+            className="athlete-card"
+            onMouseMove={handleTiltMove}
+            onMouseLeave={handleTiltLeave}
+          >
             <img src={a.img} alt={a.name} className="athlete-card__img" />
 
             <div className="athlete-card__strip">

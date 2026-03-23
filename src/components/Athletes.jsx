@@ -33,6 +33,16 @@ const ATHLETES = [
     ],
     img: '/savedge/website/Timur1.png',
   },
+  {
+    name: 'David Hahmann',
+    discipline: 'MMA & Combat Coach',
+    bio: 'Trainer der liefert. BKFC- und K.O.T.S.-Athleten auf dem Weg nach oben.',
+    stats: [
+      { label: 'Rolle', value: 'Coach' },
+      { label: 'Status', value: 'Aktiv' },
+    ],
+    img: '/savedge/website/David1.png',
+  },
 ]
 
 export default function Athletes() {

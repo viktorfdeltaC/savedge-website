@@ -997,8 +997,8 @@ img, svg {
 
 .fight-week {
   background:
-    radial-gradient(ellipse at 15% 50%, rgba(154, 224, 64, 0.06) 0%, transparent 50%),
-    radial-gradient(ellipse at 85% 20%, rgba(201, 168, 76, 0.04) 0%, transparent 40%),
+    radial-gradient(ellipse at 5% 90%, rgba(154, 224, 64, 0.07) 0%, transparent 45%),
+    radial-gradient(ellipse at 80% 10%, rgba(201, 168, 76, 0.05) 0%, transparent 40%),
     var(--bg-alt);
   padding: 140px 0;
   position: relative;
@@ -1008,7 +1008,7 @@ img, svg {
 .fight-week::before {
   content: 'FW';
   position: absolute;
-  right: -40px;
+  right: -60px;
   top: 50%;
   transform: translateY(-50%);
   font-family: var(--font-display);
@@ -1016,19 +1016,21 @@ img, svg {
   font-size: clamp(240px, 38vw, 520px);
   line-height: 1;
   color: transparent;
-  -webkit-text-stroke: 1px rgba(237, 232, 220, 0.08);
+  -webkit-text-stroke: 2px rgba(154, 224, 64, 0.1);
   pointer-events: none;
   letter-spacing: -0.04em;
   user-select: none;
 }
 
-.fight-week__grid {
-  display: grid;
-  grid-template-columns: 60% 40%;
-  align-items: center;
-  gap: 80px;
+.fight-week__inner {
+  display: flex;
+  flex-direction: column;
   position: relative;
   z-index: 1;
+}
+
+.fight-week__top {
+  padding-bottom: 52px;
 }
 
 .fight-week__label {
@@ -1039,43 +1041,57 @@ img, svg {
   letter-spacing: 0.22em;
   text-transform: uppercase;
   color: var(--gold);
-  margin-bottom: 32px;
+  margin-bottom: 28px;
 }
 
 .fight-week__headline {
-  font-size: clamp(72px, 11.5vw, 160px);
+  font-size: clamp(72px, 13vw, 180px);
   font-weight: 900;
   line-height: 0.88;
   color: var(--text);
   letter-spacing: -0.02em;
 }
 
-.fight-week__right {
+.fight-week__headline-accent {
+  display: block;
+  color: var(--accent);
+}
+
+.fight-week__rule {
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(to right, rgba(201, 168, 76, 0.45), rgba(201, 168, 76, 0.12) 50%, transparent);
+  margin-bottom: 48px;
+  transform-origin: left center;
+}
+
+.fight-week__bottom {
   display: flex;
   align-items: flex-start;
-  gap: 28px;
+  justify-content: space-between;
+  gap: 48px;
+  flex-wrap: wrap;
 }
 
-.fight-week__accent-bar {
+.fight-week__index {
+  font-family: var(--font-body);
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--text-dim);
   flex-shrink: 0;
-  width: 2px;
-  align-self: stretch;
-  background-color: var(--gold);
-  min-height: 80px;
-}
-
-.fight-week__right-content {
-  display: flex;
-  flex-direction: column;
-  gap: 32px;
+  padding-top: 3px;
+  white-space: nowrap;
 }
 
 .fight-week__sub {
   font-family: var(--font-body);
-  font-size: 12px;
+  font-size: 13px;
   font-weight: 400;
-  line-height: 1.85;
+  line-height: 1.8;
   color: var(--text-muted);
+  max-width: 400px;
+  flex: 1;
 }
 
 /* ========================
@@ -1367,9 +1383,9 @@ img, svg {
     padding-left: var(--pad);
   }
 
-  .fight-week__grid {
-    grid-template-columns: 1fr;
-    gap: 48px;
+  .fight-week__bottom {
+    flex-direction: column;
+    gap: 28px;
   }
 
   .contact__grid {

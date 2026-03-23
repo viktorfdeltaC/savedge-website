@@ -4,29 +4,42 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
 export default function FightWeekTeaser() {
   const sectionRef = useRef(null)
+  const ruleRef = useRef(null)
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      gsap.from('.fight-week__left', {
+      gsap.from('.fight-week__top', {
         scrollTrigger: {
           trigger: sectionRef.current,
-          start: 'top 72%',
+          start: 'top 75%',
         },
-        x: -30,
+        y: 40,
         opacity: 0,
         duration: 1.1,
         ease: 'power3.out',
       })
 
-      gsap.from('.fight-week__right', {
+      gsap.from(ruleRef.current, {
         scrollTrigger: {
           trigger: sectionRef.current,
-          start: 'top 72%',
+          start: 'top 75%',
         },
-        x: 30,
+        scaleX: 0,
+        duration: 1.0,
+        delay: 0.35,
+        ease: 'power3.out',
+        transformOrigin: 'left center',
+      })
+
+      gsap.from('.fight-week__bottom', {
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: 'top 75%',
+        },
+        y: 24,
         opacity: 0,
         duration: 0.9,
-        delay: 0.2,
+        delay: 0.55,
         ease: 'power3.out',
       })
     }, sectionRef)
@@ -37,28 +50,31 @@ export default function FightWeekTeaser() {
   return (
     <section ref={sectionRef} className="fight-week" id="fight-week">
       <div className="container">
-        <div className="fight-week__grid">
-          <div className="fight-week__left">
+        <div className="fight-week__inner">
+          <div className="fight-week__top">
             <span className="fight-week__label">Bald. DACH-weit.</span>
             <h2 className="fight-week__headline">
-              SAVEDGE<br />FIGHT WEEK
+              SAVEDGE<br />
+              <span className="fight-week__headline-accent">FIGHT WEEK</span>
             </h2>
           </div>
-          <div className="fight-week__right">
-            <div className="fight-week__accent-bar" />
-            <div className="fight-week__right-content">
-              <p className="fight-week__sub">
-                Das TV-Magazin, das dahin geht wo Kameras sonst nicht hinkommen. Kampfsport von innen — aus dem Camp, der Halle, dem Käfig.
-              </p>
-              <button
-                className="btn btn--outline"
-                onClick={() =>
-                  document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })
-                }
-              >
-                Fight Week entdecken
-              </button>
-            </div>
+
+          <div ref={ruleRef} className="fight-week__rule" />
+
+          <div className="fight-week__bottom">
+            <span className="fight-week__index">03 / Eigene Produktion</span>
+            <p className="fight-week__sub">
+              Das TV-Magazin, das dahin geht wo Kameras sonst nicht hinkommen.
+              Kampfsport von innen — aus dem Camp, der Halle, dem Käfig.
+            </p>
+            <button
+              className="btn btn--outline"
+              onClick={() =>
+                document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })
+              }
+            >
+              Fight Week entdecken
+            </button>
           </div>
         </div>
       </div>

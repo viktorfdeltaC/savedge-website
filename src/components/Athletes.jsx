@@ -19,7 +19,7 @@ const ATHLETES = [
     bio: 'Titelträger. Technisch. Unbeirrbar.',
     stats: [
       { label: 'Gewichtsklasse', value: 'Mittelgewicht' },
-      { label: 'Status', value: 'Champion' },
+      { label: 'Status', value: 'Champion / Aktiv' },
     ],
     img: '/savedge/website/phil1.png',
   },

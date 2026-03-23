@@ -23,6 +23,16 @@ const ATHLETES = [
     ],
     img: '/savedge/website/phil1.png',
   },
+  {
+    name: 'Timur Tsiupka',
+    discipline: 'MMA / Nachwuchstalent',
+    bio: 'Hungriger Kämpfer. Zukunft im Entstehen.',
+    stats: [
+      { label: 'Gewichtsklasse', value: 'Welterweight' },
+      { label: 'Status', value: 'Aktiv' },
+    ],
+    img: '/savedge/website/Timur1.png',
+  },
 ]
 
 export default function Athletes() {

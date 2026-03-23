@@ -50,7 +50,7 @@ export default function Footer() {
                 className="footer__logo-img"
               />
             </div>
-            <p className="footer__tagline">Combat Sports Agentur — DACH Region</p>
+            <p className="footer__tagline">Struktur für Kämpfer. DACH-weit.</p>
           </div>
 
           {/* Nav + Social */}

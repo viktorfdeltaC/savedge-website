@@ -6,7 +6,7 @@ const PARTNERS = [
   {
     number: '01',
     title: 'Marken & Sponsoren',
-    text: 'Kampfsport-Fans sind loyal, kaufkräftig und kaum besetzt. Wir verbinden euch mit den Athleten, die eure Marke tragen können.',
+    text: 'Kampfsport-Fans sind loyal, kaufkräftig und von Marken kaum erschlossen. Wir verbinden euch mit den Athleten, die eure Marke tragen können.',
   },
   {
     number: '02',

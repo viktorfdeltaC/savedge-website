@@ -110,7 +110,7 @@ export default function Hero() {
                 document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' })
               }
             >
-              Was wir tun
+              Wie wir arbeiten
             </button>
             <button
               className="btn btn--text"

@@ -16,7 +16,7 @@ const PILLARS = [
   {
     number: '03',
     title: 'SavEdge Fight Week',
-    text: 'Unser eigenes TV-Magazin für den DACH-Raum. Kämpfer mit Geschichte. In Produktion.',
+    text: 'Unser eigenes TV-Magazin. Wir gehen dahin, wo Kameras sonst nicht hinkommen — Camp, Halle, Käfig. In Produktion.',
   },
 ]
 

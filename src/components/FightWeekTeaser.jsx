@@ -39,7 +39,7 @@ export default function FightWeekTeaser() {
       <div className="container">
         <div className="fight-week__grid">
           <div className="fight-week__left">
-            <span className="fight-week__label">Coming to DACH</span>
+            <span className="fight-week__label">Bald. DACH-weit.</span>
             <h2 className="fight-week__headline">
               SAVEDGE<br />FIGHT WEEK
             </h2>
@@ -48,7 +48,7 @@ export default function FightWeekTeaser() {
             <div className="fight-week__accent-bar" />
             <div className="fight-week__right-content">
               <p className="fight-week__sub">
-                Das erste Kampfsport-TV-Magazin für den DACH-Raum. Nah an den Athleten. Nah an den Kämpfen.
+                Das TV-Magazin, das dahin geht wo Kameras sonst nicht hinkommen. Kampfsport von innen — aus dem Camp, der Halle, dem Käfig.
               </p>
               <button
                 className="btn btn--outline"

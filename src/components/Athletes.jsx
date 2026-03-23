@@ -83,7 +83,7 @@ export default function Athletes() {
       <div className="container">
         <div className="athletes__header">
           <span className="athletes__label">Unsere Athleten</span>
-          <span className="athletes__hint">← drag to explore →</span>
+          <span className="athletes__hint">← wischen →</span>
         </div>
       </div>
 

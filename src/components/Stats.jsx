@@ -5,9 +5,9 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 gsap.registerPlugin(ScrollTrigger)
 
 const STATS = [
-  { value: '3', label: 'Kampfsportarten' },
-  { value: 'DACH', label: 'Unsere Region' },
-  { value: '2024', label: 'Gegründet' },
+  { value: 'MANAGEMENT', label: 'Karriere & Verträge' },
+  { value: 'MARKETING', label: 'Events & Reichweite' },
+  { value: 'MEDIA', label: 'SavEdge Fight Week' },
 ]
 
 export default function Stats() {

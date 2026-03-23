@@ -594,10 +594,10 @@ img, svg {
    ======================== */
 
 .stats {
-  background: var(--bg-alt);
+  background: var(--accent);
   padding: 0;
-  border-top: 0.5px solid var(--divider);
-  border-bottom: 0.5px solid var(--divider);
+  border-top: none;
+  border-bottom: none;
 }
 
 .stats__grid {
@@ -610,7 +610,7 @@ img, svg {
   flex-direction: column;
   gap: 12px;
   padding: 60px 48px;
-  border-left: 0.5px solid var(--divider);
+  border-left: 0.5px solid rgba(13, 13, 11, 0.15);
   cursor: default;
   position: relative;
   overflow: hidden;
@@ -623,7 +623,7 @@ img, svg {
   left: 0;
   right: 0;
   height: 2px;
-  background: linear-gradient(to right, var(--accent), transparent);
+  background: linear-gradient(to right, #0D0D0B, transparent);
   transform: scaleX(0);
   transform-origin: left;
   transition: transform 0.4s ease;
@@ -644,7 +644,7 @@ img, svg {
   font-weight: 900;
   line-height: 1;
   letter-spacing: -0.03em;
-  color: var(--text);
+  color: #0D0D0B;
   text-transform: uppercase;
 }
 
@@ -654,7 +654,7 @@ img, svg {
   font-weight: 400;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: var(--text-muted);
+  color: rgba(13, 13, 11, 0.6);
 }
 
 /* ========================
@@ -848,21 +848,23 @@ img, svg {
    ======================== */
 
 .quote-strip {
-  padding: 140px 0;
+  padding: 120px 0;
+  overflow: hidden;
 }
 
 .quote-strip__inner {
-  overflow: hidden;
+  overflow: visible;
 }
 
 .quote-strip__text {
   font-family: var(--font-display);
-  font-size: clamp(52px, 8vw, 108px);
+  font-size: clamp(72px, 14vw, 190px);
   font-weight: 900;
-  line-height: 0.95;
+  line-height: 0.9;
   color: var(--text);
   text-transform: uppercase;
-  letter-spacing: -0.03em;
+  letter-spacing: -0.04em;
+  white-space: nowrap;
 }
 
 /* ========================
@@ -957,10 +959,10 @@ img, svg {
   transform: translateY(-50%);
   font-family: var(--font-display);
   font-weight: 900;
-  font-size: clamp(200px, 30vw, 420px);
+  font-size: clamp(240px, 38vw, 520px);
   line-height: 1;
-  color: var(--text-dim);
-  opacity: 0.15;
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(237, 232, 220, 0.08);
   pointer-events: none;
   letter-spacing: -0.04em;
   user-select: none;
@@ -1294,7 +1296,7 @@ img, svg {
   .stat {
     padding: 36px 0;
     border-left: none;
-    border-top: 0.5px solid var(--divider);
+    border-top: 0.5px solid rgba(13, 13, 11, 0.15);
   }
 
   .stat:first-child {
@@ -1437,7 +1439,8 @@ img, svg {
   }
 
   .quote-strip__text {
-    font-size: clamp(40px, 12vw, 80px);
+    font-size: clamp(56px, 14vw, 120px);
+    white-space: nowrap;
   }
 
   /* WhoWeWorkWith mobile */

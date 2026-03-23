@@ -88,7 +88,7 @@ export default function Hero() {
 
         <div ref={mediaRef} className="hero__media">
           <img
-            src="/savedge/website/joscha1.png"
+            src="/savedge/website/Joschahero.png"
             alt="Joscha — MMA Athlete"
             className="hero__img"
           />

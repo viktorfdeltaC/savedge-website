@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import { createPortal } from 'react-dom'
 import { gsap } from 'gsap'
+import { GlowingShadow } from './GlowingShadow'
 
 const NAV_LINKS = [
   { label: 'Über uns', id: 'about' },
@@ -56,6 +57,7 @@ export default function Nav() {
   return (
     <>
     <nav ref={navRef} className="nav" style={{ backgroundColor: 'rgba(10,10,10,0)' }}>
+      <GlowingShadow className="glow-container--nav">
       <div className="nav__inner container">
         {/* Logo */}
         <div className="nav__logo">
@@ -96,6 +98,7 @@ export default function Nav() {
           <span />
         </button>
       </div>
+      </GlowingShadow>
 
     </nav>
 
